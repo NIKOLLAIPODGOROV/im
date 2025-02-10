@@ -1,6 +1,6 @@
 <div class="product-card" *ngIf="product" (click)="navigate()"
      [class.is-light]="isLight">
-  <div class="product-card-favorite" *ngIf="!isLight" (click)="updateFavorite()">
+  <div class="product-card-favorite" *ngIf="!isLight && isLogged" (click)="updateFavorite()">
         <span *ngIf="product.isInFavorite">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -31,8 +31,8 @@
       {{product.price}} BYN
     </div>
     <div class="product-card-action">
-      <button class="button" *ngIf="!countInCart" (click)="addToCart()">В корзину</button>
-      <button class="button button-transparent button-in-cart" *ngIf="countInCart" (click)="removeFromCart()">
+      <button class="button" *ngIf="!product.countInCart" (click)="addToCart()">В корзину</button>
+      <button class="button button-transparent button-in-cart" *ngIf="product.countInCart" (click)="removeFromCart()">
         <span>В корзине</span>
         <span>Удалить</span>
       </button>

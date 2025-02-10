@@ -68,9 +68,39 @@
           color: $gray-text-color;
         }
 
-        .favorite-product-action button {
-          width: 160px;
-        }
+        .favorite-product-action {
+          display: flex;
+          text-align: center;
+          justify-content: center;
+
+          .button {
+            width: 160px;
+
+            .button-transparent {
+              position: relative;
+              cursor: pointer;
+            }
+            }
+              span {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                margin-top: 50px;
+                margin-left: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 400;
+                font-size: 9px;
+                color: $green-text-color;
+                border-radius: 50%;
+                background-color: #B6D5B9;
+              }
+            }
+
+
+
 
         .favorite-product-remove {
           margin-left: 61px;

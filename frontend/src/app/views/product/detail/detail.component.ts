@@ -19,6 +19,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class DetailComponent implements OnInit {
 
+  isLogged: boolean = false;
   count: number = 1;
   recommendedProducts: ProductType[] = [];
   product!: ProductType;
@@ -56,6 +57,7 @@ export class DetailComponent implements OnInit {
               private authService: AuthService,
               private _snackBar: MatSnackBar,
               private cartService: CartService) {
+    this.isLogged = this.authService.getIsLoggedIn();
   }
 
   ngOnInit(): void {
